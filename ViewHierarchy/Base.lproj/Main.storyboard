@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ViewHierarchy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,10 +16,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjS-dD-kCf">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Are you ready?"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X6N-ka-0JZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NjS-dD-kCf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ddu-d9-YEO"/>
+                            <constraint firstItem="NjS-dD-kCf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fa4-3v-FVm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="NjS-dD-kCf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Ddu-d9-YEO"/>
+                                <exclude reference="fa4-3v-FVm"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="NjS-dD-kCf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Ddu-d9-YEO"/>
+                                <include reference="fa4-3v-FVm"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="NjS-dD-kCf" id="qqz-2q-lzw"/>
+                        <outlet property="secondView" destination="bfZ-R0-Hbb" id="Mhy-K9-sVz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="bfZ-R0-Hbb">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gsf-bt-C51">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zh-Vk-rfY">
+                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <animations/>
+                                    <state key="normal" title="Yes"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8C-4T-Wpd">
+                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <animations/>
+                                    <state key="normal" title="No"/>
+                                </button>
+                            </subviews>
+                            <animations/>
+                        </stackView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="gsf-bt-C51" firstAttribute="top" secondItem="bfZ-R0-Hbb" secondAttribute="top" id="ba2-IZ-BX3"/>
+                        <constraint firstAttribute="bottom" secondItem="gsf-bt-C51" secondAttribute="bottom" id="edU-Cd-7rO"/>
+                        <constraint firstAttribute="trailing" secondItem="gsf-bt-C51" secondAttribute="trailing" id="oEx-Lv-cTg"/>
+                        <constraint firstItem="gsf-bt-C51" firstAttribute="leading" secondItem="bfZ-R0-Hbb" secondAttribute="leading" id="wgm-45-qLw"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="gsf-bt-C51"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="ba2-IZ-BX3"/>
+                            <exclude reference="edU-Cd-7rO"/>
+                            <exclude reference="oEx-Lv-cTg"/>
+                            <exclude reference="wgm-45-qLw"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="gsf-bt-C51"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="ba2-IZ-BX3"/>
+                            <include reference="edU-Cd-7rO"/>
+                            <include reference="oEx-Lv-cTg"/>
+                            <include reference="wgm-45-qLw"/>
+                        </mask>
+                    </variation>
+                </view>
             </objects>
         </scene>
     </scenes>

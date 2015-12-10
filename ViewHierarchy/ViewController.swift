@@ -1,25 +1,24 @@
-//
-//  ViewController.swift
-//  ViewHierarchy
-//
-//  Created by Marius on 12/9/15.
-//  Copyright © 2015 Marius Horga. All rights reserved.
-//
 
 import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet var secondView: UIView!
+    @IBOutlet weak var button: UIButton!
+    
+    @IBAction func buttonPressed(sender: UIButton) {
+        if sender.selected {
+            secondView.removeFromSuperview()
+            sender.selected = false
+        } else {
+            view.addSubview(secondView)
+            secondView.translatesAutoresizingMaskIntoConstraints = false
+            let bottomConstraint = secondView.bottomAnchor.constraintEqualToAnchor(button.topAnchor)
+            let leftConstraint = secondView.leftAnchor.constraintEqualToAnchor(button.leftAnchor)
+            let rightConstraint = secondView.rightAnchor.constraintEqualToAnchor(button.rightAnchor)
+            let heightConstraint = secondView.heightAnchor.constraintEqualToConstant(44)
+            NSLayoutConstraint.activateConstraints([bottomConstraint, leftConstraint, rightConstraint, heightConstraint])
+            sender.selected = true
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-

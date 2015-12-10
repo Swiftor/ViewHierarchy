@@ -54,12 +54,12 @@
 		29DE15E21C18CD2500123E55 /* ViewHierarchy */ = {
 			isa = PBXGroup;
 			children = (
-				29DE15E31C18CD2500123E55 /* AppDelegate.swift */,
 				29DE15E51C18CD2500123E55 /* ViewController.swift */,
 				29DE15E71C18CD2500123E55 /* Main.storyboard */,
 				29DE15EA1C18CD2500123E55 /* Assets.xcassets */,
 				29DE15EC1C18CD2500123E55 /* LaunchScreen.storyboard */,
 				29DE15EF1C18CD2500123E55 /* Info.plist */,
+				29DE15E31C18CD2500123E55 /* AppDelegate.swift */,
 			);
 			path = ViewHierarchy;
 			sourceTree = "<group>";
